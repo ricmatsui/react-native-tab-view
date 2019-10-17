@@ -68,6 +68,7 @@
     ]
   },
   "dependencies": {
+    "@react-native-community/viewpager": "^1.1.7",
     "prop-types": "^15.5.8"
   }
 }
