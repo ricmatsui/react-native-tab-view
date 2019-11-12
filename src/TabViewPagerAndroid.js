@@ -118,7 +118,9 @@ export default class TabViewPagerAndroid<T: Route<*>>
   };
 
   _handlePageScrollStateChanged = (e: PageScrollState) => {
-    this._isIdle = e === 'idle';
+    this._isIdle = typeof e !== 'string' && e.nativeEvent
+      ? e.nativeEvent.pageScrollState === 'idle'
+      : e === 'idle';
     this.props.jumpToIndex(this._currentIndex);
   };
 
